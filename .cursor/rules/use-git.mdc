@@ -1,0 +1,176 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Create a 
+
+## Core Principles
+
+1. **One Task at a Time**
+   - Focus on completing one task before moving to the next
+   - Avoid context switching between multiple changes
+   - Ensure work is fully tested and documented before proceeding
+
+2. **Detailed Task Planning**
+   - Create a task-specific TODO.md before starting work
+   - Break down complex changes into smaller, manageable pieces
+   - Define clear completion criteria
+
+## Task Planning Process
+
+1. Create a task-specific TODO.md with this structure:
+   ```
+   # Task: [Task Name]
+   
+   ## Overview
+   [Brief description of what needs to be done and why]
+   
+   ## Type
+   [Feature|Documentation|Bug Fix|Refactor|Performance|Security]
+   
+   ## Completion Criteria
+   - [ ] Criterion 1
+   - [ ] Criterion 2
+   
+   ## Implementation Steps
+   1. [ ] Step 1
+      - Subtask A
+      - Subtask B
+   2. [ ] Step 2
+      - Subtask A
+      - Subtask B
+   
+   ## Impact Assessment
+   - Files/systems affected
+   - Potential risks
+   - Dependencies
+   ```
+
+2. If you do not have enough information to fully write this, ask questions and confirm when you are confident to continue.
+
+3. Review and refine the TODO.md:
+   - Get feedback on the implementation plan if needed
+   - Identify potential blockers early
+   - Ensure steps are properly sized and sequenced
+
+## Implementation Workflow
+
+1. **Setup**
+   ```bash
+   # Create branch with appropriate prefix
+   git checkout -b {feature,doc,fix,refactor,perf}/[task-name]
+   ```
+
+2. **Development Process**
+   - Complete one step at a time
+   - Update TODO.md as work progresses
+   - Commit frequently with meaningful messages, when a unit of work is completed
+
+3. **Review**
+   - Self-review changes before requesting review
+   - Update documentation as needed
+   - Ensure tests pass
+
+4. **Completion**
+   - Verify all completion criteria are met
+   - Run relevant tests
+   - Update documentation
+   - Clean up any temporary code or comments
+
+## Best Practices
+
+1. **Task Sizing**
+   - Keep changes small and focused
+   - Aim for work that takes 1-2 hours to complete
+   - If a task seems too large, break it down further
+
+2. **Documentation**
+   - Update relevant documentation
+   - Document significant decisions
+   - Add/update comments as needed
+   - Keep README files current
+
+3. **Commit Messages**
+   ```
+   [Type] Brief description
+   
+   - Detailed explanation of changes
+   - Reason for changes
+   - Any breaking changes
+   
+   Made with @cursor.sh
+   ```
+
+## Pull Request Management
+
+1. **Creating Pull Requests**
+   ```bash
+   # Basic PR creation
+   gh pr create --title "[Type] Brief description" --body "Implements task: <description>\n---\nPR created by [Cursor](cursor.sh)"
+
+   # PR with specific base branch
+   gh pr create --base main --title "[Type] Brief description"
+
+   # PR with labels
+   gh pr create --label "documentation,needs-review"
+   ```
+
+2. **Stacking Pull Requests**
+   When changes depend on other pending PRs:
+   ```bash
+   # 1. Create the base PR first
+   git checkout -b fix/base-change
+   # make changes
+   git commit -m "[Fix] Base changes needed for auth update"
+   gh pr create --base main --title "[Fix] Base auth changes"
+
+   # 2. Create the dependent PR
+   git checkout -b feature/auth-update
+   # make changes
+   git commit -m "[Feature] Update auth system"
+   gh pr create --base fix/base-change --title "[Feature] Auth system update"
+
+   # 3. Link PRs
+   gh pr comment --body "Depends on #<base-pr-number>"
+   ```
+
+3. **Managing PR Reviews**
+   ```bash
+   # Check PR status
+   gh pr status
+
+   # List PRs
+   gh pr list
+
+   # View PR details
+   gh pr view <number>
+
+   # Check out a PR locally
+   gh pr checkout <number>
+
+   # Add reviewers
+   gh pr edit --add-reviewer "username1,username2"
+   ```
+
+4. **Addressing Review Feedback**
+   ```bash
+   # View PR comments
+   gh pr comments <number>
+
+   # Push updates
+   git push origin HEAD
+
+   # Mark PR ready for review
+   gh pr ready <number>
+
+   # Request re-review
+   gh pr edit --remove-reviewer "username1" && gh pr edit --add-reviewer "username1"
+   ```
+
+5. **PR Best Practices**
+   - Keep PRs focused and small (under 400 lines when possible)
+   - Use clear titles that indicate type and scope of change
+   - Link to related issues or PRs in description
+   - Stack PRs when changes are dependent
+   - Respond promptly to review comments
