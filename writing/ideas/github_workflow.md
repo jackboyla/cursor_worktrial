@@ -1,4 +1,4 @@
-# Teaching Vibe Coder GitHub Workflow
+# Teaching Users to use GitHub Workflow without Cursor 
 
 Date Started: 2023-06-15
 Status: Idea
