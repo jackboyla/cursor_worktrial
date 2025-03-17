@@ -6,6 +6,8 @@ date: "2025-03-17"
 
 # Best Practices for AI-Assisted Development Workflows
 
+> The goal of this is not just to propose a single blog post. Just also share how I'm thinking about the whole problem. and 'learn git' was just a simple example i can elicit from the internet
+
 Imagine this: you open Cursor, request a new feature in YOLO-mode, and watch it start working. You flip back to Slack, reply to a few messages, check email, and then come back...
 
 It's still running.
@@ -31,12 +33,17 @@ But look what happened: chess and Go players didn't vanish—they adapted. Grand
 
 The software parallel is direct. Chess engines became core tools for pros and students alike. AI coding assistants will become fundamental to how we build and learn software. This isn't about replacement—it's about mastering a new approach.
 
-Cursor's stance: We build tools for both pros and students to work and learn. Whether you're an engineer using AI to speed up work, or a student learning with AI guidance, we're here. The future isn't "AI instead of developers"—it's developers using AI as a tool, just as chess masters use engines today. Coding is just a small slice of what it means to build software. 
+Cursor's stance: We build tools for both pros and students to work and learn. Whether you're an engineer using AI to speed up work, or a student learning with AI guidance, we're here. The future isn't "AI instead of developers"—it's developers using AI as a tool, just as chess masters use engines today. Coding is just a small slice of what it means to build software.
+
+Another stance is just that we shuold be using content to test hypothesis about our audience
+
+When I got into the office today:
+
+- https://x.com/jxnlco/status/1901702040587501873
 
 ## Two Audiences, One Opportunity
 
 Cursor can capture two kinds of builders,  after conversations with Aman and Michael, it's clear our core users are professional developers who collaborate within teams. And in particular strong network effects arise when Cursor integrates into these collaborative workflows.
-
 
 ## We should be educating developers at all levels
 
@@ -116,6 +123,21 @@ The outcome extends beyond "Cursor can use Git"—it enables concrete workflow i
 - Faster PR review cycles
 - More manageable code review processes
 - Increased team productivity through better collaboration
+
+-------
+
+# Thoughts on Git Abstraction
+
+One key concern with completely abstracting away Git functionality by default is that developers may never properly learn these essential skills. However, this also presents an opportunity to teach Git concepts effectively. Lovable for example uses commits but no branchs, so its hard to think about 'feature branches' for example or 'merging'.
+
+The goal would be enabling beginners to:
+
+1. Build projects effectively with Cursor
+2. Learn proper development practices
+3. Gain real-world skills for joining the workforce
+4. Move beyond "YOLO coding" to professional development
+
+This approach bridges the gap between AI assistance and fundamental skill development. Then we're leveraging beginners, upskilling them, and turning them into our core customers 
 
 -------
 
