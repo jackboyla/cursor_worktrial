@@ -45,4 +45,8 @@ logs/
 # Build artifacts
 dist/
 build/
-out/ 
+out/
+
+# Untracked files to ignore for PR
+/ideas/
+/.cursor/rules/use-git.mdc 
