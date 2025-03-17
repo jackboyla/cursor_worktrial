@@ -11,6 +11,13 @@ Cursor Rules act as specialized documentation that:
 3. Establish coding standards and patterns to follow
 4. Help the AI make more informed suggestions
 
+## Benefits of Using Cursor Rules
+
+- **Consistency**: Ensures AI assistance follows project conventions
+- **Efficiency**: Reduces need to repeatedly explain project standards
+- **Quality**: Improves AI code suggestions and recommendations
+- **Onboarding**: Helps new team members understand project practices through AI interactions
+
 ## How to Use Cursor Rules
 
 - Rules are written in Markdown files with `.mdc` extension in this directory
@@ -30,5 +37,30 @@ To add new rules:
 2. Follow a clear structure with headings and examples
 3. Focus on one specific aspect of development
 4. Provide concrete examples where applicable
+
+## Example Rule Structure
+
+```markdown
+# Rule Name: Descriptive Title
+
+## Purpose
+Brief explanation of what this rule helps with
+
+## Guidelines
+1. First guideline
+2. Second guideline
+3. Third guideline
+
+## Examples
+Good example:
+```code
+// Good code example
+```
+
+Bad example:
+```code
+// Bad code example
+```
+```
 
 Rules should be concise, specific, and actionable to be most effective. 
